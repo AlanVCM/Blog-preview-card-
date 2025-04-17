@@ -1,8 +1,13 @@
-const Header = () => {
+interface HeaderProps  {
+  name: string,
+  origen: string,
+}
+
+const Header = ({ name, origen }:HeaderProps) => {
   return (
     <>
-      <button className="mensaje">Learning</button>
-      <p>Published 21 Dec 2023</p>
+      <button className="mensaje">{name}</button>
+      <p>{`Origen: ${origen}`}</p>
     </>
   );
 };

@@ -1,13 +1,14 @@
 import React from "react";
+interface BlogProps {
+  titulo: string;
+  description: string;
+}
 
-const Blog = () => {
+const Blog = ({titulo, description}: BlogProps) => {
   return (
     <div className="parte-2">
-        <h1>HTML & CSS foundations</h1>
-        <p>
-          These languages are the backbone of every website, defining structure,
-          content, and presentation.
-        </p>
+        <h1>{titulo}</h1>
+        <p>{description}</p>
       </div>
   );
 };
