@@ -2,6 +2,7 @@ import Image from "next/image";
 import Header from "./Header";
 import Blog from "./Blog";
 import Profile from "./Profile";
+import { ProfileProps } from "./Profile";
 
 interface CardProps {
   cardData: {
@@ -12,15 +13,15 @@ interface CardProps {
   };
 }
 
-const Card = async ({cardData}: any) => {
+const Card = async ({cardData, users}: {cardData: any, users: ProfileProps}) => {
   return (
     <div className="contenedor">
         <div className="parte-1">
             <Image src={"/illustration-article.svg"} alt={"Publicaccion"} width={320} height={200}/>
-            <Header name = {cardData.name} origen = {cardData.origin}/>
+            <Header name = {cardData.name} origen = {cardData.origin} />
         </div>
         <Blog titulo={cardData.name} description={cardData.description}/>
-        <Profile temperament={cardData.temperament}/>
+        <Profile ProfileProps={undefined}  />
     </div>
   )
 }

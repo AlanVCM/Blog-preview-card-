@@ -3,15 +3,14 @@ import Card from "@/components/Card";
 export default async function Home() {
   const data = await fetch('https://api.thecatapi.com/v1/breeds');
   const posts = await data.json();
-  // console.log(posts[0]);
-  // const cat = await fetch(`https://api.thecatapi.com/v1/images/Qjb0fsrDo`);
-  // const cataData = await cat.json();
-  // console.log(cataData);
+
+  const dataUsers = await fetch('https://6801162e81c7e9fbcc417654.mockapi.io/users');
+  const users = await dataUsers.json();
   return (
     <>
       {
-        posts.map((post) => (
-          <Card key={post.id} cardData={post} />
+        posts.map((post: any) => (
+          <Card key={post.id} cardData={post} users={users[10]} />
         ))
       }
     </>
